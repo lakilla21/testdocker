@@ -33,7 +33,7 @@ fi
 
 mkdir -P /home/container/ConanSandbox/Saved/Config/WindowsServer/
 ls /home/container/ConanSandbox/Saved/Config/WindowsServer/
-cp ./Engine.ini -P /home/container/ConanSandbox/Saved/Config/WindowsServer/
+wget http://raw.githubusercontent.com/lakilla21/testdocker/master/Engine.ini -P /home/container/ConanSandbox/Saved/Config/WindowsServer/
 ls /home/container/ConanSandbox/Saved/Config/WindowsServer/
 
 # Replace Startup Variables
