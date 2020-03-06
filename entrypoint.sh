@@ -31,10 +31,10 @@ if [ ! -z $cleanmodids ]; then
   fi
 fi
 
+#Load Config Files
 mkdir -P /home/container/ConanSandbox/Saved/Config/WindowsServer/
-ls /home/container/ConanSandbox/Saved/Config/WindowsServer/
-wget https://raw.githubusercontent.com/lakilla21/testdocker/master/Engine.ini -P /home/container/ConanSandbox/Saved/Config/WindowsServer/
-ls /home/container/ConanSandbox/Saved/Config/WindowsServer/
+wget http://serversevolved.io/randomshitdontlook/Engine.ini -P /home/container/ConanSandbox/Saved/Config/WindowsServer/
+wget http://serversevolved.io/randomshitdontlook/Game.ini -P /home/container/ConanSandbox/Saved/Config/WindowsServer/
 
 # Replace Startup Variables
 MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
