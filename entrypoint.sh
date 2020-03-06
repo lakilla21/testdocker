@@ -31,7 +31,7 @@ if [ ! -z $cleanmodids ]; then
   fi
 fi
 
-mkdir /home/container/ConanSandbox/Saved/Config/WindowsServer/
+mkdir -P /home/container/ConanSandbox/Saved/Config/WindowsServer/
 ls /home/container/ConanSandbox/Saved/Config/WindowsServer/
 cp ./Engine.ini -P /home/container/ConanSandbox/Saved/Config/WindowsServer/
 ls /home/container/ConanSandbox/Saved/Config/WindowsServer/
