@@ -21,5 +21,8 @@ ENV         WINEARCH win64
 ENV         WINEPREFIX /home/container/.wine64
 WORKDIR     /home/container
 
+RUN         mkdir -p ~/home/container/ConanSandbox/Saved/Config/WindowsServer/Engine.ini
+
+COPY        ./Engine.ini /home/container/ConanSandbox/Saved/Config/WindowsServer/Engine.ini
 COPY        ./entrypoint.sh /entrypoint.sh
 CMD         ["/bin/bash", "/entrypoint.sh"]
