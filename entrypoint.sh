@@ -33,8 +33,8 @@ fi
 
 #Load Config Files
 [ ! -d /home/container/ConanSandbox/Saved/Config/WindowsServer ] && mkdir -p /home/container/ConanSandbox/Saved/Config/WindowsServer/
-[ ! -f /home/container/ConanSandbox/Saved/Config/WindowsServer/Engine.ini ] && wget -p http://raw.githubusercontent.com/lakilla21/testdocker/master/Engine.ini -O /home/container/ConanSandbox/Saved/Config/WindowsServer/
-[ ! -f /home/container/ConanSandbox/Saved/Config/WindowsServer/Game.ini] && wget -p http://serversevolved.io/randomshitdontlook/Game.ini -O /home/container/ConanSandbox/Saved/Config/WindowsServer/
+[ ! -f /home/container/ConanSandbox/Saved/Config/WindowsServer/Engine.ini ] && wget http://raw.githubusercontent.com/lakilla21/testdocker/master/Engine.ini -P /home/container/ConanSandbox/Saved/Config/WindowsServer/
+[ ! -f /home/container/ConanSandbox/Saved/Config/WindowsServer/Game.ini] && wget http://serversevolved.io/randomshitdontlook/Game.ini -P /home/container/ConanSandbox/Saved/Config/WindowsServer/
 
 # Replace Startup Variables
 MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
