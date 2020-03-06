@@ -33,8 +33,8 @@ fi
 
 #Load Config Files
 mkdir -P /home/container/ConanSandbox/Saved/Config/WindowsServer/
-wget http://serversevolved.io/randomshitdontlook/Engine.ini -nc -p /home/container/ConanSandbox/Saved/Config/WindowsServer/
-wget http://serversevolved.io/randomshitdontlook/Game.ini -nc -p /home/container/ConanSandbox/Saved/Config/WindowsServer/
+wget http://serversevolved.io/randomshitdontlook/Engine.ini -p -nc /home/container/ConanSandbox/Saved/Config/WindowsServer/
+wget http://serversevolved.io/randomshitdontlook/Game.ini -p -nc /home/container/ConanSandbox/Saved/Config/WindowsServer/
 
 # Replace Startup Variables
 MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
