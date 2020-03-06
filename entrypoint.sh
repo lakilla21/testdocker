@@ -33,7 +33,7 @@ fi
 
 mkdir /home/container/ConanSandbox/Saved/Config/WindowsServer/
 ls /home/container/ConanSandbox/Saved/Config/WindowsServer/
-wget https://serversevolved.io/randomshitdontlook/Engine.ini -P /home/container/ConanSandbox/Saved/Config/WindowsServer/
+cp ./Engine.ini -P /home/container/ConanSandbox/Saved/Config/WindowsServer/
 ls /home/container/ConanSandbox/Saved/Config/WindowsServer/
 
 # Replace Startup Variables
