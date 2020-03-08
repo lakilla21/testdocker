@@ -37,7 +37,7 @@ fi
 [ ! -f /home/container/ConanSandbox/Saved/Config/WindowsServer/Game.ini ] && wget http://raw.githubusercontent.com/lakilla21/testdocker/master/Game.ini -P /home/container/ConanSandbox/Saved/Config/WindowsServer/
 
 # Edit the config with our correct port number
-sed -i "s/^Port=7778.*/Port=7779/" /home/container/ConanSandbox/Saved/Config/WindowsServer/Engine.ini
+sed -i "s/^Port=changeme.*/Port=${server.build.default.port}/" /home/container/ConanSandbox/Saved/Config/WindowsServer/Engine.ini
  
 # Replace Startup Variables
 MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
