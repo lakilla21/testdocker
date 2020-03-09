@@ -35,6 +35,8 @@ fi
 [ ! -d /home/container/ConanSandbox/Saved/Config/WindowsServer ] && mkdir -p /home/container/ConanSandbox/Saved/Config/WindowsServer/
 [ ! -f /home/container/ConanSandbox/Saved/Config/WindowsServer/Engine.ini ] && wget http://raw.githubusercontent.com/lakilla21/testdocker/master/Engine.ini -P /home/container/ConanSandbox/Saved/Config/WindowsServer/
 [ ! -f /home/container/ConanSandbox/Saved/Config/WindowsServer/Game.ini ] && wget http://raw.githubusercontent.com/lakilla21/testdocker/master/Game.ini -P /home/container/ConanSandbox/Saved/Config/WindowsServer/
+[ ! -f /home/container/ConanSandbox/Saved/Config/WindowsServer/ServerSettings.ini ] && wget http://raw.githubusercontent.com/lakilla21/testdocker/master/ServerSettings.ini -P /home/container/ConanSandbox/Saved/Config/WindowsServer/
+
 
 # Edit the config with our correct port number
 sed -i "s/^Port=changeme.*/Port=${SERVER_PORT}/" /home/container/ConanSandbox/Saved/Config/WindowsServer/Engine.ini
