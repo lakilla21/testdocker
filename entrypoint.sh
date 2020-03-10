@@ -38,8 +38,12 @@ fi
 [ ! -f /home/container/ConanSandbox/Saved/Config/WindowsServer/ServerSettings.ini ] && wget http://raw.githubusercontent.com/lakilla21/testdocker/master/ServerSettings.ini -P /home/container/ConanSandbox/Saved/Config/WindowsServer/
 
 
-# Edit the config with our correct port number
+# Edit the config with customer settings
 sed -i "s/^Port=changeme.*/Port=${SERVER_PORT}/" /home/container/ConanSandbox/Saved/Config/WindowsServer/Engine.ini
+sed -i "s/^ServerName=Conan Server - ServersEvolved.io.*/ServerName=${SERVER_NAME}/" /home/container/ConanSandbox/Saved/Config/WindowsServer/Engine.ini
+sed -i "s/^MaxPlayers=20.*/MaxPlayers=${PLAYER_SLOTS}/" /home/container/ConanSandbox/Saved/Config/WindowsServer/Game.ini
+sed -i "s/^ServerPassword=.*/ServerPassword=${SERVER_PASSWORD}/" /home/container/ConanSandbox/Saved/Config/WindowsServer/ServerSettings.ini
+sed -i "s/^AdminPassword=changeme.*/AdminPassword=${ADMIN_PASS}/" /home/container/ConanSandbox/Saved/Config/WindowsServer/ServerSettings.ini
  
 # Replace Startup Variables
 MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
