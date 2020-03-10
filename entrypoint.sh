@@ -39,11 +39,11 @@ fi
 
 
 # Edit the config with customer settings
-sed -i "s/^Port=changeme.*/Port=${SERVER_PORT}/" /home/container/ConanSandbox/Saved/Config/WindowsServer/Engine.ini
-sed -i "s/^ServerName=Conan Server - ServersEvolved.io.*/ServerName=${SERVER_NAME}/" /home/container/ConanSandbox/Saved/Config/WindowsServer/Engine.ini
-sed -i "s/^MaxPlayers=20.*/MaxPlayers=${PLAYER_SLOTS}/" /home/container/ConanSandbox/Saved/Config/WindowsServer/Game.ini
+sed -i "s/^Port=.*/Port=${SERVER_PORT}/" /home/container/ConanSandbox/Saved/Config/WindowsServer/Engine.ini
+sed -i "s/^ServerName=.*/ServerName=${SERVER_NAME}/" /home/container/ConanSandbox/Saved/Config/WindowsServer/Engine.ini
+sed -i "s/^MaxPlayers=.*/MaxPlayers=${PLAYER_SLOTS}/" /home/container/ConanSandbox/Saved/Config/WindowsServer/Game.ini
 sed -i "s/^ServerPassword=.*/ServerPassword=${SERVER_PASSWORD}/" /home/container/ConanSandbox/Saved/Config/WindowsServer/ServerSettings.ini
-sed -i "s/^AdminPassword=changeme.*/AdminPassword=${ADMIN_PASS}/" /home/container/ConanSandbox/Saved/Config/WindowsServer/ServerSettings.ini
+sed -i "s/^AdminPassword=.*/AdminPassword=${ADMIN_PASS}/" /home/container/ConanSandbox/Saved/Config/WindowsServer/ServerSettings.ini
  
 # Replace Startup Variables
 MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
