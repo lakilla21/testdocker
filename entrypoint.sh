@@ -40,11 +40,12 @@ fi
 
 # Edit the config with customer settings
 sed -i "s/^Port=.*/Port=${SERVER_PORT}/" /home/container/ConanSandbox/Saved/Config/WindowsServer/Engine.ini
+sed -i "s/^ServerQueryPort=.*/AdminPassword=${QUERY_PORT}/" /home/container/ConanSandbox/Saved/Config/WindowsServer/Engine.ini
 sed -i "s/^ServerName=.*/ServerName=${SERVER_NAME}/" /home/container/ConanSandbox/Saved/Config/WindowsServer/Engine.ini
 sed -i "s/^MaxPlayers=.*/MaxPlayers=${PLAYER_SLOTS}/" /home/container/ConanSandbox/Saved/Config/WindowsServer/Game.ini
 sed -i "s/^ServerPassword=.*/ServerPassword=${SERVER_PASSWORD}/" /home/container/ConanSandbox/Saved/Config/WindowsServer/ServerSettings.ini
 sed -i "s/^AdminPassword=.*/AdminPassword=${ADMIN_PASS}/" /home/container/ConanSandbox/Saved/Config/WindowsServer/ServerSettings.ini
- 
+
 # Replace Startup Variables
 MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
 echo ":/home/container$ ${MODIFIED_STARTUP}"
